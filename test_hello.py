@@ -1,11 +1,18 @@
 import unittest
 
-from hello import hello
+from hello import hello, greet
 
 
 class HelloTest(unittest.TestCase):
     def test_hello(self):
         self.assertEqual(hello(), "Hello, world!")
+
+    def test_greet(self):
+        self.assertEqual(greet("Karun"), "Hello, Karun!")
+
+    def test_greet_empty_name(self):
+        with self.assertRaises(ValueError):
+            greet("")
 
 
 if __name__ == "__main__":

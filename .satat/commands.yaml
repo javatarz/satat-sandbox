@@ -1,0 +1,7 @@
+# Repo-owned commands for Satat's agent.
+version: 1
+commands:
+  # Required. Installs the git hooks (the pre-push hook runs the tests).
+  setup: pre-commit install --hook-type pre-commit --hook-type pre-push
+  # Required. A fast loop for the agent between commits.
+  test: python -m unittest
